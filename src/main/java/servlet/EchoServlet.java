@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "EchoServlet", urlPatterns = {"/echo"})
 public class EchoServlet extends HttpServlet{
   @Override
-   protected void doPost  (HttpServletRequest req, HttpServletResponse res)
+   protected void doPost  (HttpServletRequest req, HttpServletResponse res) {
    
 	throws ServletException, IOException{
 
@@ -39,9 +39,11 @@ public class EchoServlet extends HttpServlet{
 		out.flush();
 		out.close();
     }
+	
+   }
 
     @Override
-     protected void doGet  (HttpServletRequest req, HttpServletResponse res)
+     protected void doGet  (HttpServletRequest req, HttpServletResponse res) {
 	 
 		res.setContentType("text/html; charset=UTF-8");
 	    PrintWriter out = res.getWriter();
@@ -80,4 +82,6 @@ public class EchoServlet extends HttpServlet{
 			out.close ();
 
 		}
+		
+	 }
 }
