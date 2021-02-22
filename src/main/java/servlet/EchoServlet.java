@@ -54,12 +54,32 @@ public class EchoServlet extends HttpServlet{
 		out.println("<!DOCTYPE html>");
 		out.println("<html><head>");
 		out.println("<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>");
-		out.println("<title>SWE 432 Echo Servlet, Assignment 4</title></head>");		
-		
-		String input = req.getParameter("String Input");
-		
-		out.println("<p>String Input: " + input + "</p>");
+		out.println("<title>SWE 432 Echo Servlet, Assignment 4</title></head>");
 
+		out.println("<h1>SWE 432 Echo Servlet, Assignment 4</h1");
+		
+		// Get all requests (name from html post) and display it as html 
+		
+		// Display the string input
+		String input = req.getParameter("String Input");
+		out.println("<h2>String Input: " + input + "</h2>");
+		
+		// Display the first random string
+		String randomString = req.getParameter("Random String");
+		out.println("<h2>Random String: " + randomString + "</h2>");		
+
+		// Display the second random string
+		String randomStringTwo = req.getParameter("Random String #2 Without Replacement");
+		out.println("<h2>Random String #2 Without Replacement: " + randomStringTwo + "</h2>");
+		
+		// Display the sorted order string
+		String sortedOrderString = req.getParameter("Sorted Order String");
+		out.println("<h2>Sorted Order String: " + sortedOrderString + "</h2>");
+
+		// Display the reversed order string 
+		String reverseOrderString = req.getParameter("Reverse Order String");
+		out.println("<h2>Reverse Order String: " + reverseOrderString + "</h2>");
+		
 	
 		/*
 		res.setContentType ("text/html");
