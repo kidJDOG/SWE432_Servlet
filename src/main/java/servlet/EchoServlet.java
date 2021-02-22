@@ -62,7 +62,15 @@ public class EchoServlet extends HttpServlet{
 		
 		// Display the string input
 		String input = req.getParameter("String Input");
-		out.println("<h2>String Input:</h2><p> " + input + "</p>");
+		
+		// If the string is blank, print error msg
+		if (input.equals("")) {
+			out.println("<h2>String Input:</h2><p> No input was provided</p>");
+		}
+		// Else, print the string 
+		else {
+			out.println("<h2>String Input:</h2><p> " + input + "</p>");
+		}
 		
 		// Display the first random string
 		String randomString = req.getParameter("Random String");
