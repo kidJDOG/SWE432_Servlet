@@ -42,7 +42,9 @@ public class EchoServlet extends HttpServlet{
 
     @Override
      protected void doGet  (HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException{
-	 
+		 
+		// req = request, and res = response
+	
 		res.setContentType("text/html; charset=UTF-8");
 	    PrintWriter out = res.getWriter();
 		
@@ -51,7 +53,7 @@ public class EchoServlet extends HttpServlet{
 		out.println("<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>");
 		out.println("<title>SWE 432 Echo Servlet, Assignment 4</title></head>");		
 		
-		String input = request.getParameter("String Input");
+		String input = req.getParameter("String Input");
 		
 		out.println("<p>String Input: " + input + "</p>");
 
