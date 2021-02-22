@@ -19,7 +19,8 @@ import javax.servlet.http.HttpServletResponse;
 public class EchoServlet extends HttpServlet{
   @Override
    protected void doPost  (HttpServletRequest req, HttpServletResponse res)
-          throws ServletException, IOException{
+   
+          throws ServletException, IOException{x
 
      res.setContentType ("aplication/json");
      res.setHeader("Access-Control-Allow-Origin", "*");
@@ -41,29 +42,42 @@ public class EchoServlet extends HttpServlet{
 
     @Override
      protected void doGet  (HttpServletRequest req, HttpServletResponse res)
-            throws ServletException, IOException
-     {
+	 
+		res.setContentType("text/html; charset=UTF-8");
+	    PrintWriter out = res.getWriter();
+		
+		out.println("<!DOCTYPE html>");
+		out.println("<html><head>");
+		out.println("<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>");
+		out.println("<title>SWE 432 Echo Servlet, Assignment 4</title></head>");		
+		
+		String input = request.getParameter("String Input");
+		
+		out.println("<p>String Input: " + input + "</p>");
 
-          res.setContentType ("text/html");
-          PrintWriter out = res.getWriter ();
+		throws ServletException, IOException
+		{
 
-          out.println ("<HTML>");
-          out.println ("<HEAD>");
-          out.println ("<TITLE>Invalid request</TITLE>");
-          out.println ("</HEAD>");
+			res.setContentType ("text/html");
+			PrintWriter out = res.getWriter ();
 
-          out.println ("<BODY>");
-          out.println ("<CENTER>");
-          out.println (
-           "<P>Invalid GET request: This service only accepts POST requests</P>"
-          );
-          out.println ("</CENTER>");
-          out.println ("</BODY>");
+			out.println ("<HTML>");
+			out.println ("<HEAD>");
+			out.println ("<TITLE>Invalid request</TITLE>");
+			out.println ("</HEAD>");
 
-          out.println ("</HTML>");
-          out.flush();
+			out.println ("<BODY>");
+			out.println ("<CENTER>");
+			out.println (
+			"<P>Invalid GET request: TEST This service only accepts POST requests</P>"
+			);
+			out.println ("</CENTER>");
+			out.println ("</BODY>");
 
-          out.close ();
+			out.println ("</HTML>");
+			out.flush();
 
-      }
+			out.close ();
+
+		}
 }
