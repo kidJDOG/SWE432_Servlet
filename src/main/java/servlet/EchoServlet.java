@@ -20,6 +20,9 @@ public class EchoServlet extends HttpServlet{
   @Override
    protected void doPost  (HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException{
 
+		doGet(req, res);
+		
+		/*
 		res.setContentType ("aplication/json");
 		res.setHeader("Access-Control-Allow-Origin", "*");
 		res.setHeader("Access-Control-Allow-Methods", "POST");
@@ -36,7 +39,7 @@ public class EchoServlet extends HttpServlet{
 		out.print(new Gson().toJson(data));
 		out.flush();
 		out.close();
-    
+		*/
 	
    }
 
@@ -44,7 +47,7 @@ public class EchoServlet extends HttpServlet{
      protected void doGet  (HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException{
 		 
 		// req = request, and res = response
-	
+		
 		res.setContentType("text/html; charset=UTF-8");
 	    PrintWriter out = res.getWriter();
 		
