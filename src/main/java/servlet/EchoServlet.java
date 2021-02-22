@@ -62,9 +62,10 @@ public class EchoServlet extends HttpServlet{
 		
 		// Display the string input
 		String input = req.getParameter("String Input");
+		String sortedOrderString = req.getParameter("Sorted Order String");
 		
 		// If the string is blank, print error msg
-		if (input.equals("")) {
+		if (sortedOrderString.equals("") {
 			out.println("<h2>String Input:</h2><p> No input was provided</p>");
 		}
 		// Else, print the string 
@@ -81,7 +82,7 @@ public class EchoServlet extends HttpServlet{
 		out.println("<h2>Random String #2 Without Replacement:</h2><p> " + randomStringTwo + "</p>");
 		
 		// Display the sorted order string
-		String sortedOrderString = req.getParameter("Sorted Order String");
+		
 		out.println("<h2>Sorted Order String:</h2><p> " + sortedOrderString + "</p>");
 
 		// Display the reversed order string 
