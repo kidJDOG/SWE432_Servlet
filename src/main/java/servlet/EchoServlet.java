@@ -65,7 +65,7 @@ public class EchoServlet extends HttpServlet{
 		String sortedOrderString = req.getParameter("Sorted Order String");
 		
 		// If the string is blank, print error msg
-		if (sortedOrderString.equals("") {
+		if (sortedOrderString.equals("")) {
 			out.println("<h2>String Input:</h2><p> No input was provided</p>");
 		}
 		// Else, print the string 
