@@ -60,16 +60,18 @@ public class EchoServlet extends HttpServlet{
 		
 		// Get all requests (name from html post) and display it as html 
 		
-		// Display the string input
-		String input = req.getParameter("String Input");
+
 		String sortedOrderString = req.getParameter("Sorted Order String");
 		
 		// If the string is blank, print error msg
+		// Compare with the sortedOrderString since this list gets rid of whitespace, 'String input' does not
 		if (sortedOrderString.equals("")) {
 			out.println("<h2>String Input:</h2><p> No input was provided</p>");
 		}
 		// Else, print the string 
 		else {
+			// Display the string input
+			String input = req.getParameter("String Input");
 			out.println("<h2>String Input:</h2><p> " + input + "</p>");
 		}
 		
@@ -82,7 +84,6 @@ public class EchoServlet extends HttpServlet{
 		out.println("<h2>Random String #2 Without Replacement:</h2><p> " + randomStringTwo + "</p>");
 		
 		// Display the sorted order string
-		
 		out.println("<h2>Sorted Order String:</h2><p> " + sortedOrderString + "</p>");
 
 		// Display the reversed order string 
