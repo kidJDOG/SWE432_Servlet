@@ -60,7 +60,7 @@ public class EchoServlet extends HttpServlet{
 		
 		// Get all requests (name from html post) and display it as html 
 		
-
+		
 		String sortedOrderString = req.getParameter("Sorted Order String");
 		
 		// If the string is blank, print error msg
