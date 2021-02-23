@@ -67,24 +67,18 @@ static String Style ="https://www.cs.gmu.edu/~offutt/classes/432/432-style.css";
 public void doPost (HttpServletRequest request, HttpServletResponse response)
    throws ServletException, IOException
 {
-   Float rslt   = new Float(0.0);
-   Float lhsVal = new Float(0.0);
-   Float rhsVal = new Float(0.0);
+
    String operation = request.getParameter("Operation");
    String lhsStr = request.getParameter("LHS");
    String rhsStr = request.getParameter("RHS");
-   if ((lhsStr != null) && (lhsStr.length() > 0))
-      lhsVal = new Float(lhsStr);
-   if ((rhsStr != null) && (rhsStr.length() > 0))
-      rhsVal = new Float(rhsStr);
 
    if (operation.equals(OperationAdd))
    {
-      rslt = new Float(lhsVal.floatValue() + rhsVal.floatValue());
+      rslt = rhsStr + lhsStr;
    }
    else if (operation.equals(OperationSub))
    {
-      rslt = new Float(lhsVal.floatValue() - rhsVal.floatValue());
+      rslt = lhsStr + rhsStr;
    }
 
    response.setContentType("text/html");
