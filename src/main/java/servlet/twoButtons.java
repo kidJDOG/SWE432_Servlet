@@ -67,7 +67,9 @@ static String Style ="https://www.cs.gmu.edu/~offutt/classes/432/432-style.css";
 public void doPost (HttpServletRequest request, HttpServletResponse response)
    throws ServletException, IOException
 {
-
+	
+   String rslt = new String("");
+   
    String operation = request.getParameter("Operation");
    String lhsStr = request.getParameter("LHS");
    String rhsStr = request.getParameter("RHS");
@@ -80,6 +82,7 @@ public void doPost (HttpServletRequest request, HttpServletResponse response)
    {
       rslt = lhsStr + rhsStr;
    }
+
 
    response.setContentType("text/html");
    PrintWriter out = response.getWriter();
