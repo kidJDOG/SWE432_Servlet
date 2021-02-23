@@ -49,7 +49,7 @@ public class twoButtons extends HttpServlet
 // Location of servlet.
 static String Domain  = "https://swe432-justin-lindo.herokuapp.com/";
 static String Path    = "/twoButtons";
-static String Servlet = "twoButtons";
+//static String Servlet = "twoButtons";
 
 // Button labels
 static String OperationAdd = "Add";
@@ -130,7 +130,7 @@ private void PrintBody (PrintWriter out, String lhs, String rhs, String rslt)
    out.println("multiple submit buttons.");
    out.println("</p>");
    out.print  ("<form method=\"post\"");
-   out.println(" action=\"https://" + Domain + Path + Servlet + "\">");
+   out.println(" action=\"https://" + Domain + Path  "\">");
    out.println("");
    out.println(" <table>");
    out.println("  <tr>");
