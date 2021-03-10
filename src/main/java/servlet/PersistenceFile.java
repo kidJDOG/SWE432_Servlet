@@ -80,7 +80,7 @@ public class PersistenceFile extends HttpServlet{
      if (error.length() == 0){
        PrintWriter entriesPrintWriter =
           new PrintWriter(new FileWriter(RESOURCE_FILE, true), true);
-       entriesPrintWriter.println(name+VALUE_SEPARATOR+age);
+       entriesPrintWriter.println(name + VALUE_SEPARATOR + age + VALUE_SEPARATOR + color);
        entriesPrintWriter.close();
 
        printHead(out);
@@ -149,22 +149,26 @@ public class PersistenceFile extends HttpServlet{
      out.println(" action=\""+Domain+Path+Servlet+"\">");
      out.println("");
      out.println(" <table>");
+	 
      out.println("  <tr>");
      out.println("   <td>Name:</td>");
      out.println("   <td><input type=\"text\" name=\""+Data.NAME.name()
       +"\" value=\""+name+"\" size=30 required></td>");
      out.println("  </tr>");
+	 
      out.println("  <tr>");
      out.println("   <td>Age:</td>");
      out.println("   <td><input type=\"text\"  name=\""+Data.AGE.name()
       +"\" oninput=\"this.value=this.value.replace(/[^0-9]/g,'');\" value=\""
       +age+"\" size=3 required></td>");
      out.println("  </tr>");
+	 
      out.println("  <tr>");
      out.println("   <td>Favorite Color:</td>");
      out.println("   <td><input type=\"text\" name=\""+Data.COLOR.name()
       +"\" value=\""+color+"\" size=30 required></td>");
      out.println("  </tr>");
+	 
      out.println(" </table>");
      out.println(" <br>");
      out.println(" <br>");
