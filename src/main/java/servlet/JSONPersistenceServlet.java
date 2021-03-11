@@ -231,11 +231,7 @@ public class JSONPersistenceServlet extends HttpServlet{
   private void printBody (
     PrintWriter out, String name, String age, String color, String error){
     out.println("<body onLoad=\"setFocus()\">");
-    out.println("<p>");
-    out.println(
-      "A simple example that demonstrates how to persist JSON data to a file"
-      );
-    out.println("</p>");
+
 
     if(error != null && error.length() > 0){
       out.println(
@@ -249,6 +245,8 @@ public class JSONPersistenceServlet extends HttpServlet{
     out.print  ("<form name=\"persist2file\" method=\"post\"");
     out.println(" action=\""+Domain+Path+Servlet+"\">");
     out.println("");
+	out.println("<h2>SWE 432-DL2: Assignment 6</h2>");
+	out.println("<h2>Justin Lindo</h2>");
     out.println(" <table>");
     out.println("  <tr>");
     out.println("   <td>Name:</td>");
