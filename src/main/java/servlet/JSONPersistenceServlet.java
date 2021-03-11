@@ -247,6 +247,7 @@ public class JSONPersistenceServlet extends HttpServlet{
     out.println("");
 	out.println("<h2>SWE 432-DL2: Assignment 6</h2>");
 	out.println("<h2>Justin Lindo</h2>");
+	ut.println("<h2>JSON Persistence Servlet</h2>");
     out.println(" <table>");
     out.println("  <tr>");
     out.println("   <td>Name:</td>");
