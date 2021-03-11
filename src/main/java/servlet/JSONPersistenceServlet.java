@@ -272,6 +272,7 @@ public class JSONPersistenceServlet extends HttpServlet{
     out.println(" <input type=\"reset\" value=\"Reset\" name=\"reset\">");
     out.println("</form>");
     out.println("");
+	out.println(" <a href=\"https://github.com/kidJDOG/SWE432_Servlet\">GitHub Repo</a> ");
     out.println("</body>");
   }
 
