@@ -37,7 +37,7 @@ import javax.servlet.annotation.WebServlet;
 
 @WebServlet(name = "JSONPersistence", urlPatterns = {"/json"})
 public class JSONPersistenceServlet extends HttpServlet{
-  static enum Data {AGE, NAME};
+  static enum Data {AGE, NAME, COLOR};
   static String RESOURCE_FILE = "entries.json";
 
   static String Domain  = "";
@@ -50,6 +50,7 @@ public class JSONPersistenceServlet extends HttpServlet{
   public class Entry {
     String name;
     Integer age;
+	String color;
   }
 
   public class Entries{
@@ -62,11 +63,12 @@ public class JSONPersistenceServlet extends HttpServlet{
     public void setFilePath(String filePath) {
         this.filePath = filePath;
     }
-    public Entries save(String name, Integer age){
+    public Entries save(String name, Integer age, String color){
       Entries entries = getAll();
       Entry newEntry = new Entry();
       newEntry.name = name;
       newEntry.age = age;
+	  newEntry.color = color;
       entries.entries.add(newEntry);
       try{
         FileWriter fileWriter = new FileWriter(filePath);
@@ -108,14 +110,14 @@ public class JSONPersistenceServlet extends HttpServlet{
 
     public String getAllAsHTMLTable(Entries entries){
       StringBuilder htmlOut = new StringBuilder("<table>");
-      htmlOut.append("<tr><th>Name</th><th>Age</th></tr>");
+      htmlOut.append("<tr><th>Name</th><th>Age</th><th>Favorite Color</th></tr>");
       if(entries == null
           || entries.entries == null || entries.entries.size() == 0){
         htmlOut.append("<tr><td>No entries yet.</td></tr>");
       }else{
         for(Entry entry: entries.entries){
            htmlOut.append(
-           "<tr><td>"+entry.name+"</td><td>"+entry.age+"</td></tr>");
+           "<tr><td>"+entry.name+"</td><td>"+entry.age+"</td><td>"+entry.color+"</td></tr>");
         }
       }
       htmlOut.append("</table>");
@@ -137,6 +139,7 @@ public class JSONPersistenceServlet extends HttpServlet{
      String name = request.getParameter(Data.NAME.name());
      String rawAge = request.getParameter(Data.AGE.name());
      Integer age = null;
+	 String color = request.getParameter(Data.COLOR.name());
 
      String error = "";
      if(name == null){
@@ -171,19 +174,19 @@ public class JSONPersistenceServlet extends HttpServlet{
      if (error.length() == 0){
        EntryManager entryManager = new EntryManager();
        entryManager.setFilePath(RESOURCE_FILE);
-       Entries newEntries=entryManager.save(name, age);
+       Entries newEntries=entryManager.save(name, age, color);
 
        printHead(out);
        if(newEntries ==  null){
          error+= "<li>Could not save entry.</li>";
-         printBody(out, name, rawAge, error);
+         printBody(out, name, rawAge, color, error);
        }else{
          printResponseBody(out, entryManager.getAllAsHTMLTable(newEntries));
        }
        printTail(out);
      }else{
        printHead(out);
-       printBody(out, name, rawAge, error);
+       printBody(out, name, rawAge, color, error);
        printTail(out);
      }
 
@@ -200,7 +203,7 @@ public class JSONPersistenceServlet extends HttpServlet{
      response.setContentType("text/html");
      PrintWriter out = response.getWriter();
      printHead(out);
-     printBody(out, "", "", "");
+     printBody(out, "", "", "", "");
      printTail(out);
   }
 
@@ -226,7 +229,7 @@ public class JSONPersistenceServlet extends HttpServlet{
    *  Prints the <BODY> of the HTML page
   ********************************************************* */
   private void printBody (
-    PrintWriter out, String name, String age, String error){
+    PrintWriter out, String name, String age, String color, String error){
     out.println("<body onLoad=\"setFocus()\">");
     out.println("<p>");
     out.println(
@@ -257,6 +260,11 @@ public class JSONPersistenceServlet extends HttpServlet{
     out.println("   <td><input type=\"text\"  name=\""+Data.AGE.name()
       +"\" oninput=\"this.value=this.value.replace(/[^0-9]/g,'');\" value=\""
       +age+"\" size=3 required></td>");
+    out.println("  </tr>");
+    out.println("  <tr>");
+    out.println("   <td>Name:</td>");
+    out.println("   <td><input type=\"text\" name=\""+Data.COLOR.name()
+      +"\" value=\""+color+"\" size=30 required></td>");
     out.println("  </tr>");
     out.println(" </table>");
     out.println(" <br>");
