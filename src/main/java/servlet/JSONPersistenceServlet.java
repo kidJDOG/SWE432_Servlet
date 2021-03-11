@@ -281,7 +281,7 @@ public class JSONPersistenceServlet extends HttpServlet{
   private void printResponseBody (PrintWriter out, String tableString){
     out.println("<body>");
     out.println("<p>");
-    out.println("A simple example that shows entries from a JSON file");
+    out.println("Entries:");
     out.println("</p>");
     out.println("");
     out.println(tableString);
