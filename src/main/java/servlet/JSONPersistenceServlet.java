@@ -262,7 +262,7 @@ public class JSONPersistenceServlet extends HttpServlet{
       +age+"\" size=3 required></td>");
     out.println("  </tr>");
     out.println("  <tr>");
-    out.println("   <td>Name:</td>");
+    out.println("   <td>Color:</td>");
     out.println("   <td><input type=\"text\" name=\""+Data.COLOR.name()
       +"\" value=\""+color+"\" size=30 required></td>");
     out.println("  </tr>");
