@@ -66,6 +66,7 @@ public void doGet (HttpServletRequest request, HttpServletResponse response)
 
    out.println(" <br><input type=\"checkbox\" name=\"attrib_remove\">Remove");
    out.println(" <input type=\"submit\" name=\"update\" value=\"Update\">");
+   out.println(" <input type=\"submit\" name=\"invalidate\" value=\"Invalidate\">");
    out.println("</form>");
    out.println("<hr>");
 
