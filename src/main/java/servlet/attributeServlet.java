@@ -92,7 +92,7 @@ public void doGet (HttpServletRequest request, HttpServletResponse response)
       String att_name  = (String) e.nextElement();
       String att_value = (String) session.getAttribute(att_name);
       String att_color = (String) e.nextElement();
-	  String att_value_color = (String) session.getAttribute(att_value_color);
+	  String att_value_color = (String) session.getAttribute(att_color);
 
 
       out.print  ("<br><b>Name:</b> ");
