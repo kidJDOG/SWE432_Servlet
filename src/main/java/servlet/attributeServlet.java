@@ -23,6 +23,12 @@ public void doGet (HttpServletRequest request, HttpServletResponse response)
    String color  = request.getParameter("attrib_color");
    String remove = request.getParameter("attrib_remove");
 
+   String logout = request.getParameter("invalidate");
+
+   if (logout == "logout") {
+     request.getSession().invalidate();
+   }
+
    if (remove != null && remove.equals("on"))
    {
       session.removeAttribute(name);
@@ -91,10 +97,5 @@ public void doGet (HttpServletRequest request, HttpServletResponse response)
    out.println("</html>");
    out.close();
 } // End doGet
-
-@Override
-protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    request.getSession().invalidate();
-}
 
 } //End  SessionLifeCycle
