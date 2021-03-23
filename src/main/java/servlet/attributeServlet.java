@@ -43,7 +43,9 @@ public void doGet (HttpServletRequest request, HttpServletResponse response)
          session.setAttribute(name, value);
       }
 
-	session.setAttribute(color, color_value);
+	  if ( (color != null) && (color_value != null) ) {
+		session.setAttribute(color, color_value);
+	  }
 
    }
 
