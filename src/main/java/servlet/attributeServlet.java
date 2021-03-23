@@ -9,6 +9,16 @@ import javax.servlet.annotation.WebServlet;
 import java.io.*;
 import java.util.Enumeration;
 
+@WebServlet("/logout")
+public class attributeServlet extends HttpServlet {
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.getSession().invalidate();
+    }
+
+}
+
 @WebServlet(name = "attributeServlet", urlPatterns = {"/attributeServlet"})
 public class attributeServlet extends HttpServlet
 {
@@ -66,7 +76,7 @@ public void doGet (HttpServletRequest request, HttpServletResponse response)
 
    out.println(" <br><input type=\"checkbox\" name=\"attrib_remove\">Remove");
    out.println(" <input type=\"submit\" name=\"update\" value=\"Update\">");
-   out.println(" <input type=\"submit\" name=\"invalidate\" value=\"Invalidate\" onClick=\"history.go(0)\">");
+   out.println(" <input type=\"submit\" name=\"invalidate\" value=\"logout\">");
    out.println("</form>");
    out.println("<hr>");
 
