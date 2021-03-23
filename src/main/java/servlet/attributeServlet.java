@@ -35,10 +35,12 @@ public void doGet (HttpServletRequest request, HttpServletResponse response)
    }
    else
    {
-      if ((name != null && name.length() > 0) && (value != null && value.length() > 0) && (color != null))
+      if ((name != null && name.length() > 0) && (value != null && value.length() > 0))
       {
-         session.setAttribute(name, value, color);
+         session.setAttribute(name, value);
       }
+
+	session.setAttribute(color);
 
    }
 
