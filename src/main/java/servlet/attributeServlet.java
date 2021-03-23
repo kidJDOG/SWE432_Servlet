@@ -9,16 +9,6 @@ import javax.servlet.annotation.WebServlet;
 import java.io.*;
 import java.util.Enumeration;
 
-@WebServlet("/logout")
-public class attributeServlet extends HttpServlet {
-
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getSession().invalidate();
-    }
-
-}
-
 @WebServlet(name = "attributeServlet", urlPatterns = {"/attributeServlet"})
 public class attributeServlet extends HttpServlet
 {
@@ -101,4 +91,10 @@ public void doGet (HttpServletRequest request, HttpServletResponse response)
    out.println("</html>");
    out.close();
 } // End doGet
+
+@Override
+protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    request.getSession().invalidate();
+}
+
 } //End  SessionLifeCycle
