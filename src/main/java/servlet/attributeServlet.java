@@ -35,9 +35,9 @@ public void doGet (HttpServletRequest request, HttpServletResponse response)
    }
    else
    {
-      if ((name != null && name.length() > 0) && (value != null && value.length() > 0))
+      if ((name != null && name.length() > 0) && (value != null && value.length() > 0) && (color != null))
       {
-         session.setAttribute(name, value);
+         session.setAttribute(name, value, color);
       }
 
    }
