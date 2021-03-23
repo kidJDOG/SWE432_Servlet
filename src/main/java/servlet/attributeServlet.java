@@ -25,7 +25,7 @@ public void doGet (HttpServletRequest request, HttpServletResponse response)
 
    String logout = request.getParameter("invalidate");
 
-   if (logout == "logout") {
+   if (logout.equals("invalidate")) {
      request.getSession().invalidate();
    }
 
@@ -72,7 +72,7 @@ public void doGet (HttpServletRequest request, HttpServletResponse response)
 
    out.println(" <br><input type=\"checkbox\" name=\"attrib_remove\">Remove");
    out.println(" <input type=\"submit\" name=\"update\" value=\"Update\">");
-   out.println(" <input type=\"submit\" name=\"invalidate\" value=\"logout\">");
+   out.println(" <input type=\"submit\" name=\"invalidate\" value=\"invalidate\">");
    out.println("</form>");
    out.println("<hr>");
 
