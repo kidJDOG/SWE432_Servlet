@@ -23,6 +23,12 @@ public void doGet (HttpServletRequest request, HttpServletResponse response)
    String color  = request.getParameter("attrib_color");
    String remove = request.getParameter("attrib_remove");
 
+   String logout = request.getParameter("invalidate");
+
+   if (logout != null) {
+	session.invalidate();
+   }
+
    if (remove != null && remove.equals("on"))
    {
       session.removeAttribute(name);
