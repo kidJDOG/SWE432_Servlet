@@ -21,7 +21,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @WebServlet(name = "EchoServlet2", urlPatterns = {"/echo2"})
-public class EchoServlet extends HttpServlet{
+public class EchoServlet2 extends HttpServlet{
   @Override
    protected void doPost  (HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException{  
 
