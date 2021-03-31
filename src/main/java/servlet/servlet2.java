@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet(name = "servlet2", urlPatterns = {"/servlet2"})
 public class servlet2 extends HttpServlet{
-  @Override
+  //@Override
   protected void forward  (HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException{
 
 
