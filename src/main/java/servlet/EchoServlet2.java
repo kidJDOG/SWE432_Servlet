@@ -65,7 +65,7 @@ public class EchoServlet2 extends HttpServlet{
 		
 		// Get all requests (name from html post) and display it as html 
 
-        RequestDispatcher rd=request.getRequestDispatcher("servlet2");  
+        RequestDispatcher rd = req.getRequestDispatcher("servlet2");  
 		rd.forward(req, res);
 		
 
