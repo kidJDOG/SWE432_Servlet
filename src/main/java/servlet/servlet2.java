@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet(name = "servlet2", urlPatterns = {"/servlet2"})
 public class servlet2 extends HttpServlet{
-  //@Override
+  @Override
   protected void doPost  (HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException{
 
     res.setContentType("text/html; charset=UTF-8");
