@@ -21,7 +21,8 @@ public class servlet2 extends HttpServlet{
   protected void forward  (HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException{
 
 
-
+    PrintWriter out = res.getWriter();
+    
     String sortedOrderString = req.getParameter("Sorted Order String");
 		
     // If the string is blank, print error msg
