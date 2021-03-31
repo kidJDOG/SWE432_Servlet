@@ -18,11 +18,11 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "servlet2", urlPatterns = {"/servlet2"})
 public class servlet2 extends HttpServlet{
   //@Override
-  protected void forward  (HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException{
+  protected void doPost  (HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException{
 
-
+    res.setContentType("text/html; charset=UTF-8");
     PrintWriter out = res.getWriter();
-    
+
     String sortedOrderString = req.getParameter("Sorted Order String");
 		
     // If the string is blank, print error msg
