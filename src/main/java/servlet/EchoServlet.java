@@ -20,9 +20,6 @@ public class EchoServlet extends HttpServlet{
   @Override
    protected void doPost  (HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException{
 
-		RequestDispatcher rd=request.getRequestDispatcher("servlet2");  
-		rd.forward(req, res);  
-
 		doGet(req, res);
 		
 		/*
